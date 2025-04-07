@@ -10,40 +10,40 @@ public interface CategoryService {
 
     /**
      * 新增分类
-     * @param categoryDTO
+     * @param categoryDTO 分类信息
      */
     void save(CategoryDTO categoryDTO);
 
     /**
      * 分页查询
-     * @param categoryPageQueryDTO
-     * @return
+     * @param categoryPageQueryDTO 分页查询条件
+     * @return 分页查询结果
      */
     PageResult pageQuery(CategoryPageQueryDTO categoryPageQueryDTO);
 
     /**
      * 根据id删除分类
-     * @param id
+     * @param id 分类id
      */
     void deleteById(Long id);
 
     /**
      * 修改分类
-     * @param categoryDTO
+     * @param categoryDTO 分类信息
      */
     void update(CategoryDTO categoryDTO);
 
     /**
      * 启用、禁用分类
-     * @param status
-     * @param id
+     * @param status 状态
+     * @param id 分类id
      */
     void startOrStop(Integer status, Long id);
 
     /**
      * 根据类型查询分类
-     * @param type
-     * @return
+     * @param type 分类类型
+     * @return 分类对象列表
      */
     List<Category> list(Integer type);
 }

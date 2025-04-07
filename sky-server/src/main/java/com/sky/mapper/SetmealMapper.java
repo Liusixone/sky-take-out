@@ -8,8 +8,8 @@ public interface SetmealMapper {
 
     /**
      * 根据分类id查询套餐的数量
-     * @param id
-     * @return
+     * @param id 分类id
+     * @return int 套餐数量
      */
     @Select("select count(id) from setmeal where category_id = #{categoryId}")
     Integer countByCategoryId(Long id);

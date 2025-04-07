@@ -13,7 +13,7 @@ public interface CategoryMapper {
 
     /**
      * 插入数据
-     * @param category
+     * @param category 分类对象
      */
     @Insert("insert into category(type, name, sort, status, create_time, update_time, create_user, update_user)" +
             " VALUES" +
@@ -22,28 +22,28 @@ public interface CategoryMapper {
 
     /**
      * 分页查询
-     * @param categoryPageQueryDTO
-     * @return
+     * @param categoryPageQueryDTO 分页查询条件
+     * @return 分页查询结果
      */
     Page<Category> pageQuery(CategoryPageQueryDTO categoryPageQueryDTO);
 
     /**
      * 根据id删除分类
-     * @param id
+     * @param id 分类id
      */
     @Delete("delete from category where id = #{id}")
     void deleteById(Long id);
 
     /**
      * 根据id修改分类
-     * @param category
+     * @param category 分类对象
      */
     void update(Category category);
 
     /**
      * 根据类型查询分类
-     * @param type
-     * @return
+     * @param type 分类类型
+     * @return 分类对象列表
      */
     List<Category> list(Integer type);
 }

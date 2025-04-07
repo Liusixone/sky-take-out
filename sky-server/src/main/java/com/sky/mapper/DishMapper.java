@@ -8,8 +8,8 @@ public interface DishMapper {
 
     /**
      * 根据分类id查询菜品数量
-     * @param categoryId
-     * @return
+     * @param categoryId 分类id
+     * @return 菜品数量
      */
     @Select("select count(id) from dish where category_id = #{categoryId}")
     Integer countByCategoryId(Long categoryId);
